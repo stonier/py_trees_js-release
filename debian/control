@@ -1,0 +1,12 @@
+Source: ros-dashing-py-trees-js
+Section: misc
+Priority: extra
+Maintainer: Daniel Stonier <d.stonier@gmail.com>
+Build-Depends: debhelper (>= 9.0.0), pyqt5-dev-tools, python3-setuptools, qttools5-dev-tools, ros-dashing-ros-workspace, python3-all, python3-setuptools
+Homepage: https://github.com/splintered-treality/py_trees_js
+Standards-Version: 3.9.2
+
+Package: ros-dashing-py-trees-js
+Architecture: any
+Depends: ${python3:Depends}, ${misc:Depends}, pyqt5-dev, python3-pyqt5, python3-pyqt5.qtsvg, python3-pyqt5.qtwebengine, python3-sip-dev, ros-dashing-ros-workspace
+Description: Qt-based viewer for py_trees in ROS.
