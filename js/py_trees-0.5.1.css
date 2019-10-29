@@ -25,8 +25,7 @@
     z-index: 2;
     box-sizing: border-box;
     /*
-    border-style: groove;
-    border-color: red;
+    border: 1px groove red;
     */
 }
 .html-name {
@@ -83,7 +82,7 @@
     padding: 5px;
     */
 }
-.html-tooltip div {
+.html-tooltip div.id {
     display: block;
     text-align: center;
     /*

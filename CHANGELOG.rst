@@ -6,10 +6,17 @@ Forthcoming
 -----------
 * ...
 
+0.5.1 (2019-10-26)
+------------------
+* [js] performance improvements, `#120 <https://github.com/splintered-reality/py_trees_js/pull/120>`_
+* [js] highlighted links, `#115 <https://github.com/splintered-reality/py_trees_js/pull/115>`_
+* [js] orthogonal link connections, for better visualisation
+* [qt] capture screenshots, `#114 <https://github.com/splintered-reality/py_trees_js/pull/114>`_
+
 0.5.0 (2019-08-29)
 ------------------
-* [js] robustness against identical timestamps, `#109 <https://github.com/splintered-reality/py_trees_js/pull/109>`_
 * [html] disable scrollbars, `#110 <https://github.com/splintered-reality/py_trees_js/pull/110>`_
+* [js] robustness against identical timestamps, `#109 <https://github.com/splintered-reality/py_trees_js/pull/109>`_
 * [js] improved window resize handling, `#111 <https://github.com/splintered-reality/py_trees_js/pull/111>`_
   * new public api ``py_trees.canvas.on_window_resize`` and ``py_trees.timeline.on_window_resize``
 
