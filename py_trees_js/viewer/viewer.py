@@ -14,6 +14,7 @@ A qt-javascript application for viewing executing or replaying py_trees
 # Imports
 ##############################################################################
 
+import copy
 import datetime
 import functools
 import os
@@ -39,17 +40,23 @@ def send_tree_response(reply):
 
 
 @qt_core.pyqtSlot()
-def send_tree(web_view_page, demo_trees, unused_checked):
-    demo_trees[send_tree.index]['timestamp'] = time.time()
+def send_tree(parameters, web_view_page, demo_trees, unused_checked):
+    number_of_trees = len(demo_trees)
+    tree = copy.deepcopy(demo_trees[send_tree.index])
+    tree['timestamp'] = time.time()
     # demo_trees[send_tree.index]['timestamp'] = time.time()
     console.logdebug("[{}] send: tree '{}' [{}][viewer]".format(
         time.monotonic(),
         send_tree.index,
-        demo_trees[send_tree.index]['timestamp'])
+        tree['timestamp'])
     )
-    javascript_command = "render_tree({{tree: {}}})".format(demo_trees[send_tree.index])
+    if not parameters.send_blackboard_data:
+        del tree['blackboard']['data']
+    if not parameters.send_activity_stream:
+        del tree['activity']
+    javascript_command = "render_tree({{tree: {}}})".format(tree)
     web_view_page.runJavaScript(javascript_command, send_tree_response)
-    send_tree.index = 0 if send_tree.index == 2 else send_tree.index + 1
+    send_tree.index = 0 if send_tree.index == (number_of_trees - 1) else send_tree.index + 1
 
 
 send_tree.index = 0
@@ -63,8 +70,7 @@ def capture_screenshot(parent, web_engine_view, unused_checked):
         "BMP Files (*.bmp)",
         "JPEG Files (*.jpeg)",
         "PNG Files (*.png)"
-        ]
-    )
+    ])
     file_dialog.selectNameFilter("PNG Files (*.png)")
     file_dialog.setDefaultSuffix((".png"))
     file_dialog.setAcceptMode(qt_widgets.QFileDialog.AcceptSave)
@@ -99,6 +105,7 @@ def capture_screenshot(parent, web_engine_view, unused_checked):
             extension = b'PNG'
         web_engine_view.grab().save(filename, extension)
 
+
 ##############################################################################
 # Main
 ##############################################################################
@@ -129,6 +136,7 @@ def main():
     window.ui.send_button.clicked.connect(
         functools.partial(
             send_tree,
+            window.parameters,
             window.ui.web_view_group_box.ui.web_engine_view.page(),
             trees.create_demo_tree_list()
         )
