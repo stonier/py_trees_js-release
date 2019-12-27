@@ -1,12 +1,6 @@
-
-/* 
- * Most settings are handled programmatically in js paper creation.
- * These two however cause problems...? Rendering of the tree
- * canvas goes awol.
- */
 #timeline {
-	position: absolute;
-	bottom: 0px;
+    position: absolute;
+    bottom: 0px;
     box-sizing: border-box;
     pointer-events: none;
     /*
@@ -15,6 +9,56 @@
     border-style: groove;
     border-color: blue;
     */
+}
+
+#activity_view {
+    border: 1px groove white;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    margin: 0px 1% 45px 1%;  /* top, right, bottom, left */
+    padding: 3px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 9px;
+    max-width: 47%;
+    /* max-height: 50%; */
+    overflow-y: auto;
+}
+
+.activity_view_header {
+    text-align: center;
+    font-size: 10px;
+}
+
+.activity_view_items {
+    text-align: left;
+    /* font-family: monospace; */
+}
+
+#blackboard_view {
+    border: 1px groove white;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    margin: 0px 1% 45px 1%;  /* top, right, bottom, left */
+    padding: 3px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 9px;
+    max-width: 47%;
+    /* max-height: 50%; */
+    overflow-y: auto;
+}
+
+.blackboard_view_header {
+    text-align: center;
+    font-size: 10px;
+}
+
+.blackboard_view_variables {
+    text-align: left;
+    /* font-family: monospace; */
 }
 
 .html-element {

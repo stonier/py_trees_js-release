@@ -11,7 +11,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(551, 356)
+        MainWindow.resize(1645, 851)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/images/tuxrobot.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         MainWindow.setWindowIcon(icon)
@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
         self.central_horizontal_layout.addWidget(self.web_view_group_box)
         MainWindow.setCentralWidget(self.central_display)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 551, 29))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1645, 29))
         self.menubar.setDefaultUp(False)
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
@@ -45,6 +45,17 @@ class Ui_MainWindow(object):
         self.screenshot_button.setEnabled(False)
         self.screenshot_button.setObjectName("screenshot_button")
         self.verticalLayout.addWidget(self.screenshot_button)
+        self.send_blackboard_data_checkbox = QtWidgets.QCheckBox(self.dock_widget_contents)
+        self.send_blackboard_data_checkbox.setEnabled(False)
+        self.send_blackboard_data_checkbox.setCheckable(True)
+        self.send_blackboard_data_checkbox.setChecked(True)
+        self.send_blackboard_data_checkbox.setObjectName("send_blackboard_data_checkbox")
+        self.verticalLayout.addWidget(self.send_blackboard_data_checkbox)
+        self.send_activity_stream_checkbox = QtWidgets.QCheckBox(self.dock_widget_contents)
+        self.send_activity_stream_checkbox.setEnabled(False)
+        self.send_activity_stream_checkbox.setChecked(False)
+        self.send_activity_stream_checkbox.setObjectName("send_activity_stream_checkbox")
+        self.verticalLayout.addWidget(self.send_activity_stream_checkbox)
         spacerItem = QtWidgets.QSpacerItem(20, 218, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
         self.verticalLayout.addItem(spacerItem)
         self.dock_widget.setWidget(self.dock_widget_contents)
@@ -59,6 +70,8 @@ class Ui_MainWindow(object):
         self.web_view_group_box.setTitle(_translate("MainWindow", "Tree View"))
         self.send_button.setText(_translate("MainWindow", "Send Tree"))
         self.screenshot_button.setText(_translate("MainWindow", "Screenshot"))
+        self.send_blackboard_data_checkbox.setText(_translate("MainWindow", "Send Blackboard Data"))
+        self.send_activity_stream_checkbox.setText(_translate("MainWindow", "Send Activity Stream"))
 
 from py_trees_js.viewer.web_view import WebViewGroupBox
 from . import images_rc
