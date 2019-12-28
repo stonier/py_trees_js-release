@@ -99,6 +99,14 @@ joint.shapes.trees.NodeView = joint.dia.ElementView.extend({
         // Set the position and dimension of the box so that it covers the JointJS element.
         var bbox = this.model.getBBox();
         // Example of updating the HTML with a data stored in the cell model.
+        try {
+            this.$box.find('span.html-name')[0].innerHTML = this.model.get('name')
+        } catch (err) {
+            console.log("Thrown an error")
+            console.log("BBox", bbox)
+            console.log("this.$box", this.$box)
+            console.log("this.$box.find('span.html-name')", this.$box.find('span.html-name'))
+        }
         this.$box.find('span.html-name')[0].innerHTML = this.model.get('name')
         this.$box.find('span.html-detail')[0].innerHTML = this.model.get('details')
         this.$box.find('div.html-tooltip')[0].innerHTML =
@@ -257,7 +265,7 @@ joint.shapes.trees.EventMarker = joint.shapes.standard.Rectangle.define(
 
 var py_trees = (function() {
 
-    var _version = '0.6.0'
+    var _version = '0.6.1'
 
     /**
      * Introduce the user to the library and print relevant info about it's discovered
@@ -752,7 +760,10 @@ var py_trees = (function() {
                   // blackboard_view.style.bottom = "auto" // if you want to pull the bottom 'up'.
               } else if ( activity_height + timeline_margin > canvas_height / 3.0 ) {
                   // view doesn't fit and would swamp the canvas - limit it
-                  activity_view.style.top = (1.0 * canvas_height / 3.0).toString() + "px"
+                  activity_view.style.top = Math.min(
+                          (2.0 * canvas_height / 3.0),
+                          (canvas_offset_height + scaled_graph_height + epsilon_hack)
+                      ).toString() + "px"
               } else {
                   // view doesn't fit but is small, let it grow as needed
                   activity_view.style.top = "auto"
@@ -796,7 +807,10 @@ var py_trees = (function() {
               // blackboard_view.style.bottom = "auto" // if you want to pull the bottom 'up'.
           } else if ( blackboard_height + timeline_margin > canvas_height / 3.0 ) {
               // view doesn't fit and would swamp the canvas - limit it
-              blackboard_view.style.top = (1.0 * canvas_height / 3.0).toString() + "px"
+              blackboard_view.style.top = Math.min(
+                      (2.0 * canvas_height / 3.0),
+                      (canvas_offset_height + scaled_graph_height + epsilon_hack)
+                  ).toString() + "px"
           } else {
               // view doesn't fit but is small, let it grow as needed
               blackboard_view.style.top = "auto"
