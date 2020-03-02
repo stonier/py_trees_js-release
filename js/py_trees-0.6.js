@@ -265,7 +265,7 @@ joint.shapes.trees.EventMarker = joint.shapes.standard.Rectangle.define(
 
 var py_trees = (function() {
 
-    var _version = '0.6.1'
+    var _version = '0.6.2'
 
     /**
      * Introduce the user to the library and print relevant info about it's discovered
@@ -1379,7 +1379,7 @@ var py_trees = (function() {
               },
           }
       });
-      cache.set('tree_cache_size', event_cache_limit)
+      cache.set('event_cache_limit', event_cache_limit)
       cache.set('trees', [])
       var previous = new joint.shapes.standard.Rectangle({
           position: { x: cache.get('size').width + separation_width, y: 0},
