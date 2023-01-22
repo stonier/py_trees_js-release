@@ -1,0 +1,63 @@
+ros-humble-py-trees-js (0.6.3-1bullseye) bullseye; urgency=high
+
+  * [js] remove buggy early view update and optimise them, #142 <https://github.com/splintered-reality/py_trees_js/pull/142>
+
+ -- Daniel Stonier <d.stonier@gmail.com>  Tue, 05 May 2020 04:00:00 -0000
+
+ros-humble-py-trees-js (0.6.2-1bullseye) bullseye; urgency=high
+
+  * [js] bugfix accidentally ignored tree_cache size, #123 <https://github.com/splintered-reality/py_trees_js/pull/123>
+  * ... missed a few pull requests inbetween
+
+ -- Daniel Stonier <d.stonier@gmail.com>  Mon, 02 Mar 2020 05:00:00 -0000
+
+ros-humble-py-trees-js (0.6.0-1bullseye) bullseye; urgency=high
+
+  * [js] accepting trees flagged with no status/graph change, #122 <https://github.com/splintered-reality/py_trees_js/pull/122>
+  * [js] blackboard views, #125 <https://github.com/splintered-reality/py_trees_js/pull/125>, #133 <https://github.com/splintered-reality/py_trees_js/pull/134>, #122 <https://github.com/splintered-reality/py_trees_js/pull/134>, #135 <https://github.com/splintered-reality/py_trees_js/pull/135>, #136 <https://github.com/splintered-reality/py_trees_js/pull/136>
+
+ -- Daniel Stonier <d.stonier@gmail.com>  Fri, 27 Dec 2019 05:00:00 -0000
+
+ros-humble-py-trees-js (0.5.1-1bullseye) bullseye; urgency=high
+
+  * [js] performance improvements, #120 <https://github.com/splintered-reality/py_trees_js/pull/120>
+  * [js] highlighted links, #115 <https://github.com/splintered-reality/py_trees_js/pull/115>
+  * [js] orthogonal link connections, for better visualisation
+  * [qt] capture screenshots, #114 <https://github.com/splintered-reality/py_trees_js/pull/114>
+
+ -- Daniel Stonier <d.stonier@gmail.com>  Sat, 26 Oct 2019 04:00:00 -0000
+
+ros-humble-py-trees-js (0.5.0-1bullseye) bullseye; urgency=high
+
+  * [html] disable scrollbars, #110 <https://github.com/splintered-reality/py_trees_js/pull/110>
+  * [js] robustness against identical timestamps, #109 <https://github.com/splintered-reality/py_trees_js/pull/109>
+  * [js] improved window resize handling, #111 <https://github.com/splintered-reality/py_trees_js/pull/111>
+    * new public api ``py_trees.canvas.on_window_resize`` and ``py_trees.timeline.on_window_resize``
+
+ -- Daniel Stonier <d.stonier@gmail.com>  Thu, 29 Aug 2019 04:00:00 -0000
+
+ros-humble-py-trees-js (0.4.0-1bullseye) bullseye; urgency=high
+
+  * Milestone - Polish & Release <https://github.com/splintered-reality/py_trees_js/milestone/5>
+
+ -- Daniel Stonier <d.stonier@gmail.com>  Tue, 13 Aug 2019 04:00:00 -0000
+
+ros-humble-py-trees-js (0.3.1-1bullseye) bullseye; urgency=high
+
+  * Milestone - Interactive Event Timeline <https://github.com/splintered-reality/py_trees_js/milestone/4>
+
+ -- Daniel Stonier <d.stonier@gmail.com>  Wed, 07 Aug 2019 04:00:00 -0000
+
+ros-humble-py-trees-js (0.2.0-1bullseye) bullseye; urgency=high
+
+  * Milestone - Streaming Trees / Qt <https://github.com/splintered-reality/py_trees_js/milestone/3?closed=1>
+
+ -- Daniel Stonier <d.stonier@gmail.com>  Thu, 01 Aug 2019 04:00:00 -0000
+
+ros-humble-py-trees-js (0.1.0-1bullseye) bullseye; urgency=high
+
+  * Milestone - Render a Tree <https://github.com/splintered-reality/py_trees_js/milestone/2?closed=1>
+
+ -- Daniel Stonier <d.stonier@gmail.com>  Thu, 25 Jul 2019 04:00:00 -0000
+
+
